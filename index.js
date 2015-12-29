@@ -19,7 +19,24 @@ var arr = ['cubeBg.jpg', 'cubeImg1.png', 'cubeImg2.png', 'cubeImg3.png', 'cubeIm
 fnLoad();
 var n=0;
 function fnLoad() {
-    arr.forEach(function () {
+    if(!arr){
+        return;
+    }
+    for(var i=0;i<arr.length;i++){
+        var oImg=new Image;
+        oImg.src="images/"+arr[i];
+        oImg.onload=function(){
+            n++;
+            loadSpan.style.width = (n / arr.length) * 100 + "%";
+            if(n>=arr.length){
+                if(loading){
+                    loading.remove();
+                    fnPhone.init();
+                }
+            }
+        }
+    }
+    /*arr.forEach(function () {
         var oImg = new Image();
         oImg.src = "images/" + arguments[0];
         oImg.onload = function () {
@@ -33,7 +50,7 @@ function fnLoad() {
             }
 
         }
-    });
+    });*/
     /*loadSpan.addEventListener("webkitTransitionEnd", function () {
         console.log(this);
         this.parentNode.parentNode.remove();
