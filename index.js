@@ -15,8 +15,11 @@ if (winW / winH > desW / desH) {
     main.style.webkitTransform = "scale(" + winH / desH + ")";
 }
 var loadSpan = getEle(".loadSpan");
-var arr = ['cubeBg.jpg', 'cubeImg1.png', 'cubeImg2.png', 'cubeImg3.png', 'cubeImg4.png', 'cubeImg5.png', 'cubeImg6.png', 'd.png', 'd2.gif', 'messageHead1.png', 'messageHead2.png', 'messageText.png', 'messageArrow1.png', 'messageArrow1.png', 'phoneBg.jpg', 'phoneBtn.png', 'phoneHeader.png', 'phoneKey.png'];
-fnLoad();
+var arr = ['cubeBg.jpg', 'cubeImg1.png', 'cubeImg2.png', 'cubeImg3.png', 'cubeImg4.png'];
+/*
+, 'cubeImg5.png', 'cubeImg6.png', 'd.png', 'd2.gif', 'messageHead1.png', 'messageHead2.png', 'messageText.png', 'messageArrow1.png', 'messageArrow1.png', 'phoneBg.jpg', 'phoneBtn.png', 'phoneHeader.png', 'phoneKey.png'
+*/
+
 var n=0;
 function fnLoad() {
     if(!arr){
@@ -58,7 +61,7 @@ function fnLoad() {
     }, false)*/
 
 }
-
+fnLoad();
 var phone = getEle('#phone');
 var touchClick = getEle('.touchClick');
 var fnPhone = {
