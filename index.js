@@ -180,7 +180,7 @@ function move(e) {
         }
         arguments[0].className = "";
         arguments[0].firstElementChild.id = "";
-    })
+    });
     if (changePos > 0) {/*ÍùÏÂ»¬*/
         var pos = -winH + changePos;
         this.prevSIndex = cur == 0 ? oLis.length - 1 : cur - 1;
