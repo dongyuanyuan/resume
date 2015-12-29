@@ -33,8 +33,8 @@ function fnLoad() {
             loadSpan.style.width = (n / arr.length) * 100 + "%";
             if(n>=arr.length){
                 if(loading){
-                    loading.remove();
-                    fnPhone.init();
+                    main.removeChild(loading);
+
                 }
             }
         }
@@ -89,6 +89,7 @@ var fnPhone = {
         }, 1000)
     }
 };
+fnPhone.init();
 var message = getEle(".message");
 var messageUl = getEle('.message>ul');
 var messageLis = document.querySelectorAll('.message>ul>li');
