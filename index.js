@@ -34,7 +34,6 @@ function fnLoad() {
             if(n>=arr.length){
                 if(loading){
                     main.removeChild(loading);
-
                 }
             }
         }
