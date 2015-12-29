@@ -4,6 +4,7 @@ function getEle(ele) {
 var bell = getEle("#bell");
 var music = getEle("#music");
 var main = getEle("#main");
+var loading = getEle(".loading");
 var winW = document.documentElement.clientWidth;
 var winH = document.documentElement.clientHeight;
 var desW = 640;
@@ -23,13 +24,18 @@ function fnLoad() {
         oImg.src = "images/" + arguments[0];
         oImg.onload = function () {
             n++;
-            loadSpan.style.width = n / arr.length * 100 + "%"
+            loadSpan.style.width = n / arr.length * 100 + "%";
+            if(n<arr.length){
+                loading.remove();
+                fnPhone.init();
+            }
         }
     });
-    loadSpan.addEventListener("webkitTransitionEnd", function () {
+    /*loadSpan.addEventListener("webkitTransitionEnd", function () {
+        console.log(this);
         this.parentNode.parentNode.remove();
         fnPhone.init();
-    }, false)
+    }, false)*/
 
 }
 
