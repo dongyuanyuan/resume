@@ -25,10 +25,13 @@ function fnLoad() {
         oImg.onload = function () {
             n++;
             loadSpan.style.width = n / arr.length * 100 + "%";
-            if(n<arr.length){
-                loading.remove();
-                fnPhone.init();
+            if(loading){
+                if(n>=arr.length){
+                    loading.remove();
+                    fnPhone.init();
+                }
             }
+
         }
     });
     /*loadSpan.addEventListener("webkitTransitionEnd", function () {
